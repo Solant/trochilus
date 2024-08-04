@@ -1,0 +1,47 @@
+{
+  "name": "trochilus",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "CLI tool to check issues in JavaScript projects",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Solant/trochilus.git"
+  },
+  "bugs": {
+    "email": "https://github.com/Solant/trochilus/issues"
+  },
+  "bin": "./dist/index.js",
+  "scripts": {
+    "build": "pkgroll",
+    "test": "vitest"
+  },
+  "keywords": [
+    "dependencies",
+    "update",
+    "package.json"
+  ],
+  "license": "MIT",
+  "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e",
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "@stylistic/eslint-plugin": "^2.6.1",
+    "@types/node": "^22.0.2",
+    "@types/semver": "^7.5.8",
+    "eslint": "9.x",
+    "globals": "^15.9.0",
+    "pkgroll": "^2.4.2",
+    "tsx": "^4.16.5",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^2.0.5"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "node-fetch": "^3.3.2",
+    "picocolors": "^1.0.1",
+    "semver": "^7.6.3"
+  }
+}
