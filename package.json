@@ -15,6 +15,7 @@
   },
   "bin": "./dist/index.js",
   "scripts": {
+    "start": "tsx ./src/index.ts",
     "build": "pkgroll",
     "test": "vitest"
   },

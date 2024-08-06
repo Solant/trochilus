@@ -8,6 +8,12 @@ import { logger } from '../logger.ts';
 export const archived: Rule = {
   name: 'archived',
   async run(path: string, pkg: PackageJson, reporter: Reporter) {
+    if (!process.env.GITHUB_TOKEN) {
+      logger.warn('GITHUB_TOKEN env variable is missing, without it you will be rate-limited too fast');
+      logger.warn('Create your access token here https://github.com/settings/tokens and retry');
+      return;
+    }
+
     const dependencies = [
       ...Object.keys(pkg.dependencies ?? {}),
       ...Object.keys(pkg.devDependencies ?? {}),

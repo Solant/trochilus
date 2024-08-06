@@ -25,11 +25,6 @@ export function getOwnerAndRepo(url: string): GithubRepository | undefined {
 }
 
 export async function isArchived(repo: GithubRepository): Promise<boolean> {
-  if (!process.env.GITHUB_TOKEN) {
-    logger.warn('GITHUB_TOKEN env variable is missing, without it you will be rate-limited too fast');
-    logger.warn('Create your access token here https://github.com/settings/tokens and retry');
-    return false;
-  }
   const response = await fetch(`https://api.github.com/repos/${repo.owner}/${repo.repo}`, {
     headers: {
       authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
