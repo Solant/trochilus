@@ -29,14 +29,14 @@
   "devDependencies": {
     "@eslint/js": "^9.8.0",
     "@stylistic/eslint-plugin": "^2.6.1",
-    "@types/node": "^22.0.2",
+    "@types/node": "^22.1.0",
     "@types/semver": "^7.5.8",
-    "eslint": "9.x",
+    "eslint": "~9.8.0",
     "globals": "^15.9.0",
     "pkgroll": "^2.4.2",
     "tsx": "^4.16.5",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.0.0",
+    "typescript-eslint": "^8.0.1",
     "vitest": "^2.0.5"
   },
   "dependencies": {
