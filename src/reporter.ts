@@ -1,3 +1,6 @@
+import semver from 'semver';
+import pc from 'picocolors';
+
 export enum IssueCode {
   WRONG_DEPENDENCY_TYPE,
   ABANDONED,
@@ -39,7 +42,17 @@ export function stringifyIssue(issue: Issue): string {
       return `Project is no longer supported: ${issue.reason}`;
     }
     case IssueCode.OUTDATED: {
-      return `New version available: ${issue.max}, current version ${issue.current}`;
+      const updateType = semver.diff(issue.current, issue.max)!;
+      let update: string = updateType;
+      if (updateType.includes('major')) {
+        update = pc.red(updateType);
+      } else if (updateType.includes('minor')) {
+        update = pc.yellow(updateType);
+      } else if (updateType.includes('patch')) {
+        update = pc.green(updateType);
+      }
+
+      return `New ${update} version available: ${issue.current} -> ${issue.max}`;
     }
   }
 }
