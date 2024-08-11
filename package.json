@@ -17,6 +17,7 @@
   "scripts": {
     "start": "tsx ./src/index.ts",
     "build": "pkgroll",
+    "lint": "eslint",
     "test": "vitest"
   },
   "keywords": [

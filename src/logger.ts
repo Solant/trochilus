@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-console */
 import pc from 'picocolors';
 
 export const enum LogLevel {

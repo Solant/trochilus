@@ -1,11 +1,11 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
+import globals from 'globals';
+import pluginJs from '@eslint/js';
+import tseslint from 'typescript-eslint';
 import stylistic from '@stylistic/eslint-plugin';
 
 export default [
   {
-    files: ["**/*.{js,mjs,cjs,ts}"],
+    files: ['**/*.{js,mjs,cjs,ts}'],
     plugins: {
       '@stylistic': stylistic,
     },
@@ -22,11 +22,15 @@ export default [
   {
     rules: {
       'no-shadow': ['error', {
-        "builtinGlobals": false,
-        "hoist": "functions",
-        "allow": [],
-        "ignoreOnInitialization": false,
+        'builtinGlobals': false,
+        'hoist': 'functions',
+        'allow': [],
+        'ignoreOnInitialization': false,
       }],
+      'no-console': ['error'],
     },
+  },
+  {
+    ignores: ['dist/index.js'],
   },
 ];

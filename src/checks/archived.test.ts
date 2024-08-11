@@ -5,7 +5,6 @@ import { Reporter } from '../reporter.ts';
 
 describe('archived', () => {
   beforeAll(() => {
-    vi.stubEnv('GITHUB_TOKEN', 'test');
     vi.mock('../api/github.ts', () => ({
       getOwnerAndRepo: () => ({ owner: 'owner', repo: 'repo' }),
       isArchived: () => true,
@@ -13,7 +12,6 @@ describe('archived', () => {
   });
 
   afterAll(() => {
-    vi.unstubAllEnvs();
     vi.resetAllMocks();
   });
 

@@ -55,7 +55,12 @@ program
     const reporter = new Reporter();
     for (const check of checks) {
       logger.debug(`Starting ${check.name} check`);
-      await check.run(root, pkg, reporter);
+      try {
+        await check.run(root, pkg, reporter);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } catch (e: any) {
+        logger.warn(`Error during "${check.name}" check: ${e.message}`);
+      }
       logger.debug(`Finished ${check.name} check`);
     }
 
